@@ -72,6 +72,28 @@
   animation: heartFloat 8s ease-out forwards;
 }
 
+/* Enhanced Heart Float with drift */
+@keyframes heartFloatDrift {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(calc(var(--drift-x, 0) * 1px)) rotate(180deg);
+  }
+  100% {
+    transform: translateY(-100vh) translateX(calc(var(--drift-x, 0) * 1px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.heart-float-drift {
+  animation: heartFloatDrift linear forwards;
+}
+
 /* Firework */
 @keyframes firework {
   0% {
